@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <?php
-                    if (!isset($_SESSION["username"])) {
+                    if (!isset($_SESSION["level"])) {
                         include 'nav_guest.php';
                     } else {
                         include 'nav_logged.php';

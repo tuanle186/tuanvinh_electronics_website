@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +22,7 @@
             <form name="loginForm" action="./login_processing.php" onsubmit="return validateLoginForm()" method="post">
                 <div class="mb-3 mt-3">
                     <label for="username" class="form-label" style="font-weight:700">Tên đăng nhập:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Nhập vào tên đăng nhập" name="username">
+                    <input type="text" class="form-control" id="username" placeholder="Nhập vào tên đăng nhập" name="username" value="<?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "" ?>">
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="pwd" class="form-label" style="font-weight:700">Mật khẩu:</label>
@@ -32,8 +33,8 @@
 
             <div class="container-fluid mt-2">
                 <?php
-                    if (isset($_GET['login_failed'])) {
-                        echo "Sai tên đăng nhập hoặc mật khẩu";
+                    if (isset($_GET['wrong_pwd'])) {
+                        echo "Sai mật khẩu, vui lòng thử lại.";
                     }
                     if (isset($_GET['username_not_found'])) {
                         echo "Không tìm thấy tên đăng nhập";

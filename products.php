@@ -22,6 +22,7 @@
             include './database/dbConn.php';
 
             // CREATE A NEW DB "OnlineStore"
+            /*
             $dbname = "OnlineStore";
             $sql = "CREATE DATABASE $dbname";
             if ($conn->query($sql) === TRUE) {
@@ -82,7 +83,7 @@
             } else {
                 echo "Error adding new user: " . $conn->error;
             }
-
+            */
             // DISPLAY LIST OF PRODUCTS
             $sql = "SELECT * FROM products";
             $result = $conn->query($sql);

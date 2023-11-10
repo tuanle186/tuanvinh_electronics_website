@@ -1,5 +1,6 @@
 <?php
     include './database/dbConn.php';
+    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username_input = test_input($_POST['username']);
         $password_input = test_input($_POST['pswd']);
@@ -9,16 +10,17 @@
             $rows = $result->fetch_assoc();
             if (password_verify($password_input, $rows['password'])) {
                 setcookie("user", $username_input, time() + (86400 * 30), "/");
-                session_start();
                 $_SESSION["username"] = $username_input;
-                $_SESSION["password"] = $rows['password'];
                 $_SESSION["level"] = $rows['level'];
                 header("Location: index.php");
 
             } else {
-                header("Location: http://localhost/login.php?login_failed=1");
+                $_SESSION["username"] = $username_input;
+                header("Location: http://localhost/login.php?wrong_pwd=1");
             }
         } else {
+            session_unset();
+            session_destroy();
             header("Location: http://localhost/login.php?username_not_found=1");
         }
     }   
