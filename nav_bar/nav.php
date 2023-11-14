@@ -74,6 +74,11 @@
                     <a id="nav_categories" class="nav-link" href="http://localhost/index.php?page=home">Liên hệ</a>
                 </li>
             </li>
+            <li class="navbar-nav mx-1">
+                <li class="nav-item">
+                    <a id="nav_categories" class="nav-link" href="http://localhost/index.php?page=lab332">Lab 3.3.2</a>
+                </li>
+            </li>
         </ul>
     </nav>
     
