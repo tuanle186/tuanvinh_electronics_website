@@ -14,8 +14,6 @@
             case 'logout':
                 header("Location: logout.php");
                 break;
-            case 'lab332':
-                header("Location: ajax.php");
             default:
                 break;
         }

@@ -19,7 +19,7 @@ function loadTextFile() {
     xhttp.onload = function() {
         document.getElementById("3.3.1").innerHTML = this.responseText;
     }
-    xhttp.open("GET", "ajax_test.txt");
+    xhttp.open("GET", "script/ajax_test.txt");
     xhttp.send();
 }
 
@@ -43,6 +43,6 @@ function loadProducts() {
         document.getElementById("3.3.2").innerHTML = output;
     }
 
-    xhttp.open("GET", "loadProducts.php");
+    xhttp.open("GET", "script/loadProducts.php");
     xhttp.send();
 }
