@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include 'database/dbConn.php';
+include '../database/dbConn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['query'])) {
     $query = $conn->real_escape_string($_POST['query']);
@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['query'])) {
             $suggestions[] = $row['product_name'];
         }
     }
+
     echo json_encode($suggestions);
 }
 

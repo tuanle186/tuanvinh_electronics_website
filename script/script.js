@@ -46,3 +46,46 @@ function loadProducts() {
     xhttp.open("GET", "script/loadProducts.php");
     xhttp.send();
 }
+
+function searchProducts(query) {
+    // const xhttp = new XMLHttpRequest();
+
+    // xhttp.onload = function() {
+    //     console.log(this.responseText);
+    //     let suggestions = JSON.parse(this.responseText);
+    //     displaySuggestions(suggestions);
+    // }
+
+    // let data = 'query=' + encodeURIComponent(query);
+    // xhttp.open('POST', 'search_processing.php', true);
+    // xhttp.send(data);
+    $.ajax({
+        type: 'POST',
+        url: 'search_processing.php',
+        data: { query: query },
+        success: function(response) {
+            displaySuggestions(response);
+        }
+    });
+}
+
+function displaySuggestions(suggestions) {
+    let suggestionsDiv = document.getElementById('suggestions');
+    suggestionsDiv.innerHTML = '';
+
+    if (suggestions.length > 0) {
+        suggestions.forEach(suggestion => {
+            const suggestionElement = document.createElement('div');
+            suggestionElement.classList.add('suggestion');
+            suggestionElement.textContent = suggestion;
+
+            suggestionElement.addEventListener('click', function() {
+                window.location.href = 'search.php?q=' + encodeURIComponent(suggestion);
+            });
+
+            suggestionsDiv.appendChild(suggestionElement);
+        })
+    }
+
+    suggestionsDiv.style.display = suggestions.length > 0 ? 'block' : 'none';
+}

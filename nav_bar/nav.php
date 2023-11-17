@@ -5,7 +5,7 @@
                 <img id="logo1" src="/media_source/logo.png" alt="CVAS Professional Audio"> 
             </a>
 
-            <div class="container">                
+            <!-- <div class="container">                
                 <form class="d-flex" action="search.php" method="get">
                     <input class="form-control me-3 rounded-2" type="text" placeholder="Tìm kiếm sản phẩm" name="q">
                     <button class="btn btn-dark rounded-2" type="submit">
@@ -14,8 +14,12 @@
                         </svg>
                     </button>
                 </form>
-            </div>
-            
+            </div> -->
+            <form class="search-container" action="search.php" method="get">
+                <input type="text" class="search-box" id="searchBox" placeholder="Bạn muốn tìm gì?" name="q" oninput="searchProducts(this.value)">
+                <div class="suggestions-container" id="suggestions"></div>
+            </form>
+
             <div class="d-flex">
                 <div class="d-flex ms-2 me-3 border border-black rounded-3">
                     <div class="d-flex">
@@ -75,6 +79,5 @@
                 </li>
             </li>
         </ul>
-    </nav>
-    
+    </nav>  
 </header>
