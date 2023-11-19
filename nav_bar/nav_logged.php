@@ -7,7 +7,8 @@
         </div>
         <div id="cart" class="d-inline-flex flex-column p-1 align-item-center">
             <div class="p-0">
-                <nobr><?php echo $_SESSION["username"] ?></nobr>
+                <nobr><?php echo $_SESSION["username"] ?></nobr> 
+                <br>
                 <nobr><?php echo "Cấp độ: " . $_SESSION["level"] ?></nobr>
             </div>
         </div>
