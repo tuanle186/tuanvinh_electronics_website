@@ -79,5 +79,5 @@
                 </li>
             </li>
         </ul>
-    </nav>  
+    </nav>
 </header>

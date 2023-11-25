@@ -3,16 +3,16 @@
         $page = $_GET['page'];
         switch ($page) {
             case 'home':
-                header("Location: home.php");
+                header("Location: ./site_home/home.php");
                 break;
             case 'products':
-                header("Location: products.php");
+                header("Location: ./site_products/products.php");
                 break;
             case 'login':
-                header("Location: login.php");
+                header("Location: ./site_login/login.php");
                 break;
             case 'logout':
-                header("Location: logout.php");
+                header("Location: ./site_login/logout.php");
                 break;
             default:
                 break;
@@ -26,14 +26,14 @@
         <title>CVAS Professional Audio</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="logo_1.jpg">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="./style/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="./style/style.css" >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+        <script src="./script/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="script/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     </head>
 
     <body>
-        <?php include 'home.php' ?>
+        <?php header("Location: ./site_home/home.php"); ?>
     </body>
 </html>
