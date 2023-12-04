@@ -64,6 +64,11 @@
             </li>
             <li class="navbar-nav mx-1">
                 <li class="nav-item">
+                    <a id="nav_categories" class="nav-link" href="http://localhost/index.php?page=contact">Liên hệ</a>
+                </li>
+            </li>
+            <li class="navbar-nav mx-1">
+                <li class="nav-item">
                     <a id="nav_categories" class="nav-link" href="http://localhost/index.php?page=lab3">Lab 3</a>
                 </li>
             </li>

@@ -6,39 +6,19 @@ $(document).ready(function() {
     function loadResults() {
         $.ajax({
             type: "POST",
-            url: "search_and_loadMore.php",
+            url: "http://localhost/site_products/loadMore.php",
             data: {
                 searchTerm: searchTerm,
                 limit: limit,
                 offset: offset
             },
             success: function(response) {
-                $("#resumeTableBody").append(response);
+                $("#productTableBody").append(response);
                 offset += limit;
                 toggleShowMoreButton(); // Cập nhật trạng thái nút "Xem thêm"
             }
         });
     }
-    // Code AJAX để tìm kiếm theo title
-    $("#searchForm").submit(function(e) {
-        e.preventDefault();
-        searchTerm = $("#searchInput").val();
-        offset = 0; // Reset lại offset khi tìm kiếm mới và bắt đầu từ vị trí đầu tiên
-        $.ajax({
-            type: "POST",
-            url: "search_and_loadMore.php",
-            data: {
-                searchTerm: searchTerm,
-                limit: limit,
-                offset: offset
-            },
-            success: function(response) {
-                $("#productTableBody").html(response);
-                offset += limit;
-                toggleShowMoreButton(); // Cập nhật trạng thái nút "Show more"
-            }
-        });
-    });
     // Code AJAX để tải thêm sản phẩm khi không có tìm kiếm
     $("#loadMoreBtn").click(function() {
         loadResults();
@@ -52,4 +32,4 @@ $(document).ready(function() {
             $("#loadMoreBtn").hide();
         }
     }
-});
+});z

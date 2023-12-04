@@ -14,8 +14,12 @@
             case 'logout':
                 header("Location: ./site_login/logout.php");
                 break;
+            case 'contact':
+                header("Location: ./site_contact/contact.php");
+                break;
             case 'lab3':
                 header("Location: ./lab3_ajax/lab3.php");
+                break;
             default:
                 break;
         }
