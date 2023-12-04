@@ -17,6 +17,8 @@
             default:
                 break;
         }
+    } else {
+        header('Location: ./site_home/home.php');
     }
 ?>
 
@@ -34,6 +36,5 @@
     </head>
 
     <body>
-        <?php header("Location: ./site_home/home.php"); ?>
     </body>
 </html>

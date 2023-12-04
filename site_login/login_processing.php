@@ -1,6 +1,6 @@
 <?php
-    include './database/dbConn.php';
     session_start();
+    include '../config/dbConn.php';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username_input = test_input($_POST['username']);
         $password_input = test_input($_POST['pswd']);
@@ -8,11 +8,13 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $rows = $result->fetch_assoc();
+            $_SESSION["username"] = $username_input;
+            $_SESSION["is_logged_in"] = false;
             if (password_verify($password_input, $rows['password'])) {
                 setcookie("user", $username_input, time() + (86400 * 30), "/");
-                $_SESSION["username"] = $username_input;
                 $_SESSION["level"] = $rows['level'];
-                header("Location: index.php");
+                $_SESSION["is_logged_in"] = true;
+                header("Location: http://localhost/index.php");
 
             } else {
                 $_SESSION["username"] = $username_input;

@@ -16,7 +16,7 @@
 </div>
 
 <div class="d-flex border border-black rounded-3 ps-1">
-    <a href="logout.php" style="color: black; text-decoration: none>
+    <a href="../site_login/logout.php" style="color: black; text-decoration: none>
         <div class="d-flex">
             <div class="p-2 align-item-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">

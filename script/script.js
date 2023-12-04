@@ -19,7 +19,7 @@ function loadTextFile() {
     xhttp.onload = function() {
         document.getElementById("3.3.1").innerHTML = this.responseText;
     }
-    xhttp.open("GET", "script/ajax_test.txt");
+    xhttp.open("GET", "http://localhost/script/ajax_test.txt");
     xhttp.send();
 }
 
@@ -43,25 +43,14 @@ function loadProducts() {
         document.getElementById("3.3.2").innerHTML = output;
     }
 
-    xhttp.open("GET", "script/loadProducts.php");
+    xhttp.open("GET", "http://localhost/script/loadProducts.php");
     xhttp.send();
 }
 
 function searchProducts(query) {
-    // const xhttp = new XMLHttpRequest();
-
-    // xhttp.onload = function() {
-    //     console.log(this.responseText);
-    //     let suggestions = JSON.parse(this.responseText);
-    //     displaySuggestions(suggestions);
-    // }
-
-    // let data = 'query=' + encodeURIComponent(query);
-    // xhttp.open('POST', 'search_processing.php', true);
-    // xhttp.send(data);
     $.ajax({
         type: 'POST',
-        url: 'search_processing.php',
+        url: 'http://localhost/component/search_processing.php',
         data: { query: query },
         success: function(response) {
             displaySuggestions(response);

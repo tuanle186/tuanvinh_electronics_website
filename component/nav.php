@@ -2,24 +2,12 @@
     <nav class="navbar navbar-expand navbar-light bg-warning">
         <div class="container w-75">
             <a class="navbar-brand align-self-center" href="http://localhost/index.php">
-                <img id="logo1" src="/media_source/logo.png" alt="CVAS Professional Audio"> 
+                <img id="logo1" src="/assets/logo.png" alt="CVAS Professional Audio"> 
             </a>
-
-            <!-- <div class="container">                
-                <form class="d-flex" action="search.php" method="get">
-                    <input class="form-control me-3 rounded-2" type="text" placeholder="Tìm kiếm sản phẩm" name="q">
-                    <button class="btn btn-dark rounded-2" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 20">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                </form>
-            </div> -->
-            <form class="search-container" action="search.php" method="get">
+            <form class="search-container" action="http://localhost/component/search.php" method="get">
                 <input type="text" class="search-box" id="searchBox" placeholder="Bạn muốn tìm gì?" name="q" oninput="searchProducts(this.value)">
                 <div class="suggestions-container" id="suggestions"></div>
             </form>
-
             <div class="d-flex">
                 <div class="d-flex ms-2 me-3 border border-black rounded-3">
                     <div class="d-flex">
@@ -53,11 +41,12 @@
                     </div>
                 </div>
                 <?php
-                    if (!isset($_SESSION["level"])) {
-                        include 'nav_guest.php';
-                    } else {
+                    if (isset($_SESSION["is_logged_in"]) && $_SESSION["is_logged_in"]) {
                         include 'nav_logged.php';
+                    } else {
+                        include 'nav_guest.php';
                     }
+
                 ?>
             </div>
         </div>
