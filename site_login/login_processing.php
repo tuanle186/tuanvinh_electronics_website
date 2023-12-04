@@ -18,12 +18,12 @@
 
             } else {
                 $_SESSION["username"] = $username_input;
-                header("Location: http://localhost/login.php?wrong_pwd=1");
+                header("Location: http://localhost/site_login/login.php?wrong_pwd=1");
             }
         } else {
             session_unset();
             session_destroy();
-            header("Location: http://localhost/login.php?username_not_found=1");
+            header("Location: http://localhost/site_login/login.php?username_not_found=1");
         }
     }   
     mysqli_close($conn);

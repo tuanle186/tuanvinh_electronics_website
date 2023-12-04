@@ -4,7 +4,7 @@
             <a class="navbar-brand align-self-center" href="http://localhost/index.php">
                 <img id="logo1" src="/assets/logo.png" alt="CVAS Professional Audio"> 
             </a>
-            <form class="search-container" action="http://localhost/component/search.php" method="get">
+            <form class="search-container" action="http://localhost/site_products/products.php" method="get">
                 <input type="text" class="search-box" id="searchBox" placeholder="Bạn muốn tìm gì?" name="q" oninput="searchProducts(this.value)">
                 <div class="suggestions-container" id="suggestions"></div>
             </form>
@@ -64,7 +64,7 @@
             </li>
             <li class="navbar-nav mx-1">
                 <li class="nav-item">
-                    <a id="nav_categories" class="nav-link" href="http://localhost/index.php?page=home">Liên hệ</a>
+                    <a id="nav_categories" class="nav-link" href="http://localhost/index.php?page=lab3">Lab 3</a>
                 </li>
             </li>
         </ul>

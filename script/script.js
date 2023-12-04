@@ -69,7 +69,7 @@ function displaySuggestions(suggestions) {
             suggestionElement.textContent = suggestion;
 
             suggestionElement.addEventListener('click', function() {
-                window.location.href = 'search.php?q=' + encodeURIComponent(suggestion);
+                window.location.href = 'http://localhost/site_products/products.php?q=' + encodeURIComponent(suggestion);
             });
 
             suggestionsDiv.appendChild(suggestionElement);
